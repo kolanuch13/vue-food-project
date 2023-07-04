@@ -19,7 +19,7 @@
   </header>
   <router-view :inventory="inventory" :addToCart="addToCart"/>
 
-  <SidebarComponent v-if="showSidebar" :toggle="toggleSidebar" :cart="cart" :inventory="inventory" :remove="removeItem"/>
+  <SidebarComponent v-if="showSidebar" :toggle="toggleSidebar" :cart="cart" :inventory="inventory" :remove="removeItem" :handleSubmit="handleSubmit"/>
 
   <footer>
 
@@ -57,6 +57,10 @@ export default {
     },
     removeItem (name) {
       delete this.cart[name]
+    },
+    handleSubmit () {
+      this.$store.commit('setNewOrder', this.cart)
+      this.cart = {}
     }
   }
 }

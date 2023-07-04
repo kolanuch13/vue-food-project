@@ -40,7 +40,7 @@
         <p class="center" v-if="!Object.keys(cart).length"><em>No items in cart</em></p>
         <div class="spread">
           <span><strong>Total:</strong> ${{calculateTotal()}}</span>
-          <button type="button" class="button button-light">Checkout</button>
+          <button type="button" class="button button-light" @click="handleSubmit">Checkout</button>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
 <script>
 export default {
   name: 'SidebarComponent',
-  props: ['toggle', 'cart', 'inventory', 'remove'],
+  props: ['toggle', 'cart', 'inventory', 'remove', 'handleSubmit'],
   methods: {
     getPrice (name) {
       const product = this.inventory.find((p) => {

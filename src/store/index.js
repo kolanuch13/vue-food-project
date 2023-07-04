@@ -2,13 +2,11 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-  },
-  getters: {
+    orders: []
   },
   mutations: {
-  },
-  actions: {
-  },
-  modules: {
+    setNewOrder (state, order) {
+      state.orders.push(order)
+    }
   }
 })
