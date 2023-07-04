@@ -3,7 +3,7 @@
 
 @import '_mixins.sass';
 
-@import '../../node_modules/normalize.css/normalize';
+@import '../../../node_modules/normalize.css/normalize';
 
 @import '_modak.scss';
 @import '_icofont.scss';
@@ -17,6 +17,6 @@
 
 @import '_card.sass';
 @import '_topNav.sass';
-@import '_splash.sass';
+@import '_splash.scss';
 
 @import '_mediaQueries.sass';
